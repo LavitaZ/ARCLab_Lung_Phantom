@@ -68,7 +68,7 @@ class waveform:
         self.initime = time.time()
         #interpolate using full set points. setpoints sin() samples
         self.func = interpolate.splrep(samples,self.setpoints)
-        self.setpoint = 0;
+        self.setpoint = 0
 
         
     def calcsetpoint(self):
@@ -94,7 +94,7 @@ class waveform:
         self.initime = time.time()
         #interpolate using full set points. setpoints sin() samples
         self.func = interpolate.splrep(samples,self.setpoints)
-        self.setpoint = 0;
+        self.setpoint = 0
 
     def read_write(self):
         self.calcsetpoint()
@@ -177,7 +177,7 @@ def plot_data():
    
 #button functions
 def b_stop():
-    stopcom = '0';
+    stopcom = '0'
     s1.reset_output_buffer()
     s1.write(stopcom.encode('utf-8'))
     print('stop')
@@ -193,7 +193,7 @@ def b_start():
 
 
 def b_set():
-    s1.reset_output_buffer();
+    s1.reset_output_buffer()
     amplitude =str(int(float(ampin.get())/2*1024) + 541)
     s1.write(('a' + amplitude).encode('utf-8'))
     print(amplitude)
